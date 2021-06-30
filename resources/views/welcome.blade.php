@@ -1,60 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex flex-col justify-center min-h-screen py-12 bg-gray-50 sm:px-6 lg:px-8">
-        <div class="absolute top-0 right-0 mt-4 mr-4">
-            @if (Route::has('login'))
-                <div class="space-x-4">
-                    @auth
-                        <a
-                            href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                            class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-                        >
-                            Log out
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    @else
-                        <a href="{{ route('login') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </div>
-
-        <div class="flex items-center justify-center">
+    @include('layouts.navbar')
+    <div class="flex flex-col justify-center min-h-screen">
+        <div class="flex items-center justify-center text-center">
             <div class="flex flex-col justify-around">
-                <div class="space-y-6">
-                    <a href="{{ route('home') }}">
-                        <x-logo class="w-auto h-16 mx-auto text-indigo-600" />
+                <a href="{{ route('home') }}" class="content-center">
+                    <i class="fas fa-utensils fa-5x text-indigo-600"></i>
+                </a>
+
+                <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-50 mb-5">
+                    {{ config('app.name') }}
+                </h1>
+                @auth
+                    <a href="" class="bg-indigo-600 hover:bg-indigo-800 text-white font-bold py-2 px-4 border border-white rounded mb-2">
+                        Commander
                     </a>
+                @endauth
 
-                    <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-600">
-                        {{ config('app.name') }}
-                    </h1>
+                {{-- <a data-toggle="collapse" href="#menu" role="button" aria-expanded="false" aria-controls="menu"
+                class="bg-indigo-600 hover:bg-indigo-800 text-white font-bold py-2 px-4 border border-white rounded">
+                    Notre menu
+                </a> --}}
+                <button class="bg-indigo-600 hover:bg-indigo-800 text-white font-bold py-2 px-4 border border-white rounded mb-3"
+                type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false">
+                    Notre menu
+                  </button>
 
-                    <ul class="list-reset">
-                        <li class="inline px-4">
-                            <a href="https://tailwindcss.com" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Tailwind CSS</a>
-                        </li>
-                        <li class="inline px-4">
-                            <a href="https://github.com/alpinejs/alpine" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Alpine.js</a>
-                        </li>
-                        <li class="inline px-4">
-                            <a href="https://laravel.com" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Laravel</a>
-                        </li>
-                        <li class="inline px-4">
-                            <a href="https://laravel-livewire.com" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Livewire</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
+
         </div>
+        <div class="collapse mx-6" id="collapseExample">
+            <div class="w-full bg-gray-600 bg-opacity-50 text-white rounded border-1">
+                @include('menu')
+            </div>
+          </div>
     </div>
 @endsection
+
+
+
