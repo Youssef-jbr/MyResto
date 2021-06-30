@@ -15,9 +15,10 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->string('photo');
             $table->string('libelle');
             $table->string('categorie');
-            $table->string('prix');
+            $table->float('prix');
 
         });
     }
