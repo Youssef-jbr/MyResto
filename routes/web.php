@@ -21,7 +21,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('home');
+/* Route::view('/', 'welcome')->name('home'); */
+
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)->name('login');
@@ -40,3 +42,5 @@ Route::middleware('auth')->group(function () {
     Route::get('email/verify/{id}/{hash}', EmailVerificationController::class)->middleware('signed')->name('verification.verify');
     Route::post('logout', LogoutController::class)->name('logout');
 });
+
+Route::get('/menu', [App\Http\Controllers\MenuController::class, 'index'])->name('menu');

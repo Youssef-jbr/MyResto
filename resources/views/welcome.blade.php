@@ -2,7 +2,7 @@
 
 @section('content')
     @include('layouts.navbar')
-    <div class="flex flex-col justify-center min-h-screen">
+    <div class="flex flex-col justify-center min-h-screen py-24">
         <div class="flex items-center justify-center text-center">
             <div class="flex flex-col justify-around">
                 <a href="{{ route('home') }}" class="content-center">
@@ -32,7 +32,7 @@
         </div>
         <div class="collapse mx-6" id="collapseExample">
             <div class="w-full bg-gray-600 bg-opacity-50 text-white rounded border-1">
-                @include('menu')
+                @include('menu.index')
             </div>
           </div>
     </div>
