@@ -1,6 +1,7 @@
-{{-- @extends('layout.app')
-@section('content') --}}
+@extends('layouts.app')
+@section('content')
 
+<a href="/create">Créer la commande </a>
 <div>
     <ul>
     @foreach ($articles as $article)
@@ -9,5 +10,5 @@
     </ul>
 </div>
 
-{{-- @endsection
- --}}
+
+

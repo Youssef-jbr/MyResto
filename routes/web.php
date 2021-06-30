@@ -24,6 +24,7 @@ use App\Http\Controllers\Auth\EmailVerificationController;
 
 Route::view('/', 'welcome')->name('home');
 Route::get('/index', [CommandeController::class, 'index']);
+Route::get('/create', [CommandeController::class, 'create']);
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
