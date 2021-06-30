@@ -15,6 +15,21 @@ class Register extends Component
     public $name = '';
 
     /** @var string */
+    public $prenom = '';
+
+    /** @var string */
+    public $rue = '';
+
+    /** @var string */
+    public $ville = '';
+
+    /** @var integer */
+    public $cp = '';
+
+    /** @var integer */
+    public $telephone = '';
+
+    /** @var string */
     public $email = '';
 
     /** @var string */
@@ -27,13 +42,23 @@ class Register extends Component
     {
         $this->validate([
             'name' => ['required'],
+            'prenom' => ['required'],
+            'rue' =>['required'],
+            'ville' =>['required'],
+            'cp' =>['required'],
+            'telephone' =>['required'],
             'email' => ['required', 'email', 'unique:users'],
             'password' => ['required', 'min:8', 'same:passwordConfirmation'],
         ]);
 
         $user = User::create([
             'email' => $this->email,
-            'name' => $this->name,
+            'nom' => $this->name,
+            'prenom'=>$this->prenom,
+            'rue'=>$this->rue,
+            'ville'=>$this->ville,
+            'cp'=>$this->cp,
+            'telephone'=>$this->telephone,
             'password' => Hash::make($this->password),
         ]);
 
