@@ -17,7 +17,7 @@ class CreateCommandesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->index();
             $table->string('mode_livraison');
-            $table->float('prix');
+            $table->double('prix');
             $table->timestamps();
 
             //Foreign keys
