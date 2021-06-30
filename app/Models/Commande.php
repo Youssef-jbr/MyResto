@@ -10,6 +10,13 @@ class Commande extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'mode_livraison',
+        'prix',
+
+    ];
+
     public function user(){
         return $this->belongsTo('App\Models\User');
     }

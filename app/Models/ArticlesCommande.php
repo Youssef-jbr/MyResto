@@ -9,6 +9,12 @@ class ArticlesCommande extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'commande_id',
+        'article_id',
+        'qte',
+    ];
+
 
     public function commande(){
         return $this->belongsTo('App\Models\Commande');
