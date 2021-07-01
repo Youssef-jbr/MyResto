@@ -15,9 +15,9 @@ class CreateCommandesTable extends Migration
     {
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->index();
-            $table->string('mode_livraison');
-            $table->float('prix');
+            $table->unsignedBigInteger('user_id')->nullable()->index();
+            $table->string('mode_livraison')->nullable();
+            $table->float('prix')->nullable();
             $table->timestamps();
 
             //Foreign keys

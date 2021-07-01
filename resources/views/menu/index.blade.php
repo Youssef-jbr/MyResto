@@ -1,5 +1,5 @@
-<div class="text-center py-24">
-    <h3 class="py-3">Notre Menu</h3>
+<div class="text-center pt-3 pb-24">
+    <h3 class="mt-2">Notre Menu</h3>
     <div class="w-full border-1 rounded border-white">
         <div class="accordion text-black" id="accordion">
             <div class="card bg-transparent">

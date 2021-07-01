@@ -13,7 +13,8 @@ class Commande extends Model
     public function user(){
         return $this->belongsTo('App\Models\User');
     }
-    public function articlesCommande(){
-        return $this->hasMany('App\Models\ArticlesCommande');
+
+    public function commandeArticles(){
+        return $this->belongsToMany('App\Models\Article', 'articles_commandes');
     }
 }

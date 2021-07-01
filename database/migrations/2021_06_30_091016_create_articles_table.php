@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->string('libelle');
             $table->string('categorie');
             $table->float('prix');
+            $table->string('photo');
 
         });
     }

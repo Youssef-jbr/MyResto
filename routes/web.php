@@ -44,3 +44,11 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/menu', [App\Http\Controllers\MenuController::class, 'index'])->name('menu');
+Route::prefix('commande')->group(function () {
+    Route::get('/index', [App\Http\Controllers\CommandesController::class, 'index'])->name('commandes.index')->middleware('auth');
+    Route::get('/a_emporter', [App\Http\Controllers\CommandesController::class, 'commandeAEmporter'])->name('commandes.emporter')->middleware('auth');
+    Route::post('/a_emporter/articles/store', [App\Http\Controllers\CommandesController::class, 'storeArticlesCommandeAEmporter'])->name('commandes.articles.store')->middleware('auth');
+    /* Route::get('/livraison', [App\Http\Controllers\CommandesController::class, 'commandeEnLivraison'])->name('commandes.livraison')->middleware('auth');
+    Route::post('/livraison/articles/store', [App\Http\Controllers\CommandesController::class, 'storeArticlesCommandeEnLivraison'])->name('commandes.articles.store')->middleware('auth'); */
+});
+

@@ -18,7 +18,7 @@ class CreateArticlesCommandesTable extends Migration
             $table->unsignedBigInteger('commande_id')->index();
             $table->unsignedBigInteger('article_id')->index();
 
-            $table->string('qte');
+            $table->string('qte')->nullable();
 
             //Foreign key
             $table->foreign('commande_id')->references('id')->on('commandes')->onDelete('cascade');

@@ -13,7 +13,7 @@
                     {{ config('app.name') }}
                 </h1>
                 @auth
-                    <a href="" class="bg-indigo-600 hover:bg-indigo-800 text-white font-bold py-2 px-4 border border-white rounded mb-2">
+                    <a href="{{ route('commandes.index') }}" class="bg-indigo-600 hover:bg-indigo-800 text-white font-bold py-2 px-4 border border-white rounded mb-2">
                         Commander
                     </a>
                 @endauth
@@ -30,11 +30,11 @@
             </div>
 
         </div>
-        <div class="collapse mx-6" id="collapseExample">
+        <div class="collapse mt-2" id="collapseExample">
             <div class="w-full bg-gray-600 bg-opacity-50 text-white rounded border-1">
                 @include('menu.index')
             </div>
-          </div>
+        </div>
     </div>
 @endsection
 
