@@ -33,7 +33,7 @@
             <div class="card-header" id="headingDesserts">
             <h2 class="mb-0">
                 <button class="btn btn-link btn-block text-center text-white collapsed" type="button" data-toggle="collapse" data-target="#desserts" aria-expanded="false" aria-controls="desserts">
-                    <strong>Désserts</strong>
+                    <strong>Desserts</strong>
                 </button>
             </h2>
             </div>
