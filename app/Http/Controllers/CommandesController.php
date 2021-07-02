@@ -17,16 +17,14 @@ class CommandesController extends Controller
 
     public function commandeAEmporter() {
         $articles = Article::all();
+        return view('commandes.a_emporter.index')->with(compact('articles'));
+    }
+
+    public function storeArticlesCommandeAEmporter(Request $request) {
         $commande = new Commande();
         $commande->user_id = auth()->user()->id;
         $commande->mode_livraison = "à emporter";
         $commande->save();
-
-        return view('commandes.a_emporter.index')->with(compact('articles', 'commande'));
-    }
-
-    public function storeArticlesCommandeAEmporter(Request $request) {
-        $commande = Commande::find($request->commande_id);
         $articles = $request->input('articles');
         foreach($articles as $article){
             $commande->commandeArticles()->attach($article);
@@ -37,12 +35,20 @@ class CommandesController extends Controller
 
     public function commandeEnLivraison() {
         $articles = Article::all();
+        return view('commandes.livraison.index')->with(compact('articles'));
+    }
+
+    public function storeArticlesCommandeEnLivraison(Request $request) {
         $commande = new Commande();
         $commande->user_id = auth()->user()->id;
         $commande->mode_livraison = "en livraison";
         $commande->save();
-
-        return view('commandes.livraison.index')->with(compact('articles', 'commande'));
+        $articles = $request->input('articles');
+        foreach($articles as $article){
+            $commande->commandeArticles()->attach($article);
+            $commande->save();
+        }
+        return view('commandes.a_emporter.recap')->with(compact('commande'));
     }
 
     public function adresseLivraison(Request $request) {

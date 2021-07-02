@@ -17,7 +17,7 @@
                     transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
                         A emporter
                     </a>
-                    <a href="{{-- {{ route('commandes.livraison') }} --}}" class="bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 mx-3 border border-white rounded mb-2
+                    <a href="{{ route('commandes.livraison') }}" class="bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 mx-3 border border-white rounded mb-2
                     transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
                         Livraison
                     </a>
