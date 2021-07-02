@@ -13,7 +13,8 @@
                     {{ config('app.name') }}
                 </h1>
                 @auth
-                    <a href="{{ route('commandes.index') }}" class="bg-indigo-600 hover:bg-indigo-800 text-white font-bold py-2 px-4 border border-white rounded mb-2">
+                    <a href="{{ route('commandes.index') }}" class="bg-indigo-600 hover:bg-indigo-800 text-white font-bold py-2 px-4 border border-white rounded mb-2
+                    transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
                         Commander
                     </a>
                 @endauth
@@ -22,7 +23,8 @@
                 class="bg-indigo-600 hover:bg-indigo-800 text-white font-bold py-2 px-4 border border-white rounded">
                     Notre menu
                 </a> --}}
-                <button class="bg-indigo-600 hover:bg-indigo-800 text-white font-bold py-2 px-4 border border-white rounded mb-3"
+                <button class="bg-indigo-600 hover:bg-indigo-800 text-white font-bold py-2 px-4 border border-white rounded mb-3
+                transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                 type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false">
                     Notre menu
                   </button>

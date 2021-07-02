@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\Article;
 use App\Models\Commande;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\App;
 
 class CommandesController extends Controller
 {
@@ -30,12 +29,12 @@ class CommandesController extends Controller
             $commande->commandeArticles()->attach($article);
             $commande->save();
         }
-        return view('commandes.a_emporter.recap')->with(compact('commande'));
+        return view('commandes.recap')->with(compact('commande'));
     }
 
     public function commandeEnLivraison() {
         $articles = Article::all();
-        return view('commandes.livraison.index')->with(compact('articles'));
+        return view('commandes.livraison.menu')->with(compact('articles'));
     }
 
     public function storeArticlesCommandeEnLivraison(Request $request) {
@@ -48,18 +47,7 @@ class CommandesController extends Controller
             $commande->commandeArticles()->attach($article);
             $commande->save();
         }
-        return view('commandes.a_emporter.recap')->with(compact('commande'));
-    }
-
-    public function adresseLivraison(Request $request) {
-        $user = User::find(auth()->user()->id);
-        $user->rue = $request->rue;
-        $user->cp = $request->cp;
-        $user->ville = $request->ville;
-        $user->telephone = $request->telephone;
-        $user->save();
-
-        return redirect()->route('');
+        return view('commandes.recap')->with(compact('commande'));
     }
 
 }

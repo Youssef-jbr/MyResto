@@ -49,6 +49,8 @@ Route::prefix('commande')->group(function () {
     Route::get('/a_emporter', [App\Http\Controllers\CommandesController::class, 'commandeAEmporter'])->name('commandes.emporter')->middleware('auth');
     Route::post('/a_emporter/articles/store', [App\Http\Controllers\CommandesController::class, 'storeArticlesCommandeAEmporter'])->name('commandes.articles.store')->middleware('auth');
     Route::get('/livraison', [App\Http\Controllers\CommandesController::class, 'commandeEnLivraison'])->name('commandes.livraison')->middleware('auth');
+    Route::get('/livraison/adresse', [App\Http\Controllers\UserController::class, 'adresseForm'])->name('commandes.livraison.adresse')->middleware('auth');
+    Route::post('/livraison/adresse/store', [App\Http\Controllers\UserController::class, 'storeAdresseForm'])->name('commandes.livraison.adresse.store')->middleware('auth');
     Route::post('/livraison/articles/store', [App\Http\Controllers\CommandesController::class, 'storeArticlesCommandeEnLivraison'])->name('commandes.articlesLivre.store')->middleware('auth');
 });
 

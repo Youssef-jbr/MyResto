@@ -1,4 +1,4 @@
-@section('title', 'Create a new account')
+@section('title', 'Créez votre compte')
 
 <div>
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
@@ -7,13 +7,13 @@
         </a>
 
         <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
-            Create a new account
+            Créez votre compte
         </h2>
 
         <p class="mt-2 text-sm text-center text-gray-600 leading-5 max-w">
-            Or
+            ou
             <a href="{{ route('login') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
-                sign in to your account
+                connectez-vous
             </a>
         </p>
     </div>
@@ -37,7 +37,7 @@
 
                 <div class="mt-6">
                     <label for="prenom" class="block text-sm font-medium text-gray-700 leading-5">
-                        Prenom
+                        Prénom
                     </label>
 
                     <div class="mt-1 rounded-md shadow-sm">
@@ -51,7 +51,7 @@
 
                 <div class="mt-6">
                     <label for="email" class="block text-sm font-medium text-gray-700 leading-5">
-                        Email address
+                        Adresse e-mail
                     </label>
 
                     <div class="mt-1 rounded-md shadow-sm">
@@ -65,7 +65,7 @@
 
                 <div class="mt-6">
                     <label for="password" class="block text-sm font-medium text-gray-700 leading-5">
-                        Password
+                        Mot de passe
                     </label>
 
                     <div class="mt-1 rounded-md shadow-sm">
@@ -79,7 +79,7 @@
 
                 <div class="mt-6">
                     <label for="password_confirmation" class="block text-sm font-medium text-gray-700 leading-5">
-                        Confirm Password
+                        Confirmez votre mot de passe
                     </label>
 
                     <div class="mt-1 rounded-md shadow-sm">
@@ -89,8 +89,9 @@
 
                 <div class="mt-6">
                     <span class="block w-full rounded-md shadow-sm">
-                        <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:ring-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                            Register
+                        <button type="submit" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:ring-indigo active:bg-indigo-700
+                        transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-80">
+                            Enregistrer
                         </button>
                     </span>
                 </div>

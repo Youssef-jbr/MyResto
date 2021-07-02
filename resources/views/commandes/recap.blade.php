@@ -2,7 +2,7 @@
 
 @section('content')
     @include('layouts.navbar')
-    <div class="flex flex-col justify-center min-h-screen py-24">
+    <div class="flex flex-col items-center justify-center min-h-screen py-24">
         <div class="flex items-center justify-center text-center">
             <div class="flex flex-col justify-around">
                 <a href="{{ route('home') }}" class="content-center">
@@ -15,7 +15,7 @@
                 <h3 class="text-white mb-3">RECAPITULATIF DE LA COMMANDE</h3>
             </div>
         </div>
-        <div class="w-full bg-gray-600 bg-opacity-50 text-white rounded border-1">
+        <div class="w-full md:w-1/2 bg-gray-600 bg-opacity-50 text-white rounded border-1">
             <div class="text-center">
                 @foreach ($commande->commandeArticles as $article)
                     <p>{{ $article->libelle }}</p>

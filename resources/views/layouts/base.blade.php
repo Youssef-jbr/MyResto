@@ -31,7 +31,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
 
-    <body class="bg-gradient-to-b from-indigo-300 to-purple-800">
+    <body class="bg-gradient-to-b from-green-400 to-blue-400">
         @yield('body')
 
         @livewireScripts

@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="w-full px-3 bg-gray-600 bg-opacity-50 text-white rounded border-1">
-            <form action="{{ route('commandes.articles.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('commandes.articlesLivre.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="text-center py-3">
                     @include('commandes.menu')
